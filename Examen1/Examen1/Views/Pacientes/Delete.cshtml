@@ -1,0 +1,114 @@
+﻿@model Examen1.Models.Paciente
+
+@{
+    ViewData["Title"] = "Borrar Paciente";
+}
+
+<h2 class="text-light">Borrar Paciente</h2>
+<h3 class="text-light">¿Esta seguro que desea eliminar el registro?</h3>
+
+<div>
+    <hr />
+    <dl class="row text-light">
+        <dd class="col-2 borde boldo" style="">
+            @Html.DisplayNameFor(model => model.PacienteNombre)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteNombre)
+        </dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteSegundoNombre)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteSegundoNombre)
+        </dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteApellido)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteApellido)
+        </dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteCorreo)
+        </dd>
+        <dd class="col-10 borde">
+            @Html.DisplayFor(model => model.PacienteCorreo)
+        </dd>
+        <dd class="col-2 borde boldo small">
+            @Html.DisplayNameFor(model => model.PacienteAcompañanteNombre)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteAcompañanteNombre)
+        </dd>
+        <dd class="col-2 borde boldo small">
+            @Html.DisplayNameFor(model => model.PacienteAcompañanteApellido)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteAcompañanteApellido)
+        </dd>
+        <dd class="col-2 borde"></dd>
+        <dd class="col-2 borde"></dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteDireccionCalle)
+        </dd>
+        <dd class="col-10 borde">
+            @Html.DisplayFor(model => model.PacienteDireccionCalle)
+        </dd>
+        <dd class="col-2 borde boldo small">
+            @Html.DisplayNameFor(model => model.PacienteDireccionCalleLinea2)
+        </dd>
+        <dd class="col-10 borde">
+            @Html.DisplayFor(model => model.PacienteDireccionCalleLinea2)
+        </dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteCiudad)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteCiudad)
+        </dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteProvincia)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteProvincia)
+        </dd>
+        <dd class="col-2 borde"></dd>
+        <dd class="col-2 borde"></dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteCodigoAreaTelefono)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteCodigoAreaTelefono)
+        </dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteNumeroTelefono)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteNumeroTelefono)
+        </dd>
+        <dd class="col-2 borde"></dd>
+        <dd class="col-2 borde"></dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteCodigoAreaCelular)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteCodigoAreaCelular)
+        </dd>
+        <dd class="col-2 borde boldo">
+            @Html.DisplayNameFor(model => model.PacienteNumeroCelular)
+        </dd>
+        <dd class="col-2 borde">
+            @Html.DisplayFor(model => model.PacienteNumeroCelular)
+        </dd>
+        <dd class="col-4 borde"></dd>
+    </dl>
+</div>
+
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PacienteId" />
+        <input type="submit" class="btn btn-outline-light" value="Borrar" />
+        <a asp-action="Index" class="btn btn-outline-light"><i class="fas fa-undo-alt"></i> Regresar</a>
+    </form>
+</div>
+<link rel="stylesheet" href="~/css/custom.css" />

@@ -4,84 +4,22 @@ using Examen1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Examen1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210617231836_CreacionInicial")]
+    partial class CreacionInicial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Examen1.Models.Paciente", b =>
-                {
-                    b.Property<int>("PacienteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("PacienteAcompañanteApellido")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteAcompañanteNombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteApellido")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteCiudad")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteCodigoAreaCelular")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteCodigoAreaTelefono")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteCodigoPostal")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteCorreo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteDireccionCalle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteDireccionCalleLinea2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteNombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteNumeroCelular")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteNumeroTelefono")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteProvincia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PacienteSegundoNombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PacienteId");
-
-                    b.ToTable("Pacientes");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {

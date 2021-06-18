@@ -1,0 +1,123 @@
+﻿@model Examen1.Models.Paciente
+
+@{
+    ViewData["Title"] = "Editar Paciente";
+}
+
+<h2 class="text-light">Editar Paciente</h2>
+
+<div class="row">
+    <div class="col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PacienteId"  />
+            <div class="form-group text-light input-group">
+                <div class="col-2 small"><label> Nombres y Apellidos <br /> del paciente</label></div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteNombre" class="form-control small textbox" />
+                    <span asp-validation-for="PacienteNombre" class="text-danger"></span>
+                    <label> Nombre </label>
+                </div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteSegundoNombre" class="form-control small textbox" />
+                    <span asp-validation-for="PacienteSegundoNombre" class="text-danger"></span>
+                    <label> Segundo Nombre </label>
+                </div>
+                <div class="col-4 small">
+                    <input asp-for="PacienteApellido" class="form-control small textbox" />
+                    <span asp-validation-for="PacienteApellido" class="text-danger"></span>
+                    <Label> Apellidos </Label>
+                </div>
+                <div class="col-2 small"><label> Correo <br /> Electronico </label></div>
+                <div class="col-7 small">
+                    <input asp-for="PacienteCorreo" class="form-control small textbox" />
+                    <span asp-validation-for="PacienteCorreo" class="text-danger"></span>
+                    <Label> example@example.com </Label>
+                </div>
+                <div class="col-3 small"></div>
+                <div class="col-2 small">
+                    <label>Nombre del <br />Acompañante</label>
+                </div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteAcompañanteNombre" class="form-control small textbox" />
+                    <span asp-validation-for="PacienteAcompañanteNombre" class="text-danger"></span>
+                    <Label> Nombre </Label>
+                </div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteAcompañanteApellido" class="form-control small textbox" />
+                    <span asp-validation-for="PacienteAcompañanteApellido" class="text-danger"></span>
+                    <Label> Apellido </Label>
+                </div>
+                <div class="col-4 small"></div>
+                <div class="col-2 small">
+                    <label>Direccion</label>
+                </div>
+                <div class="col-10 small">
+                    <input asp-for="PacienteDireccionCalle" class="form-control textbox col-7" />
+                    <span asp-validation-for="PacienteDireccionCalle" class="text-danger"></span>
+                    <Label> Direccion de la calle </Label>
+                </div>
+                <div class="col-2 small">
+                </div>
+                <div class="col-10 small">
+                    <input asp-for="PacienteDireccionCalleLinea2" class="form-control textbox col-7" />
+                    <span asp-validation-for="PacienteDireccionCalleLinea2" class="text-danger"></span>
+                    <Label> Direccion de la calle linea 2 </Label>
+                </div>
+
+                <div class="col-2 small"></div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteCiudad" class="form-control small textbox " />
+                    <span asp-validation-for="PacienteCiudad" class="text-danger"></span>
+                    <label> Ciudad </label>
+                </div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteProvincia" class="form-control small textbox " />
+                    <span asp-validation-for="PacienteProvincia" class="text-danger"></span>
+                    <label> Estado/Provincia </label>
+                </div>
+                <div class="col-4 small"></div>
+                <div class="col-2 small"></div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteCodigoPostal" class="form-control small textbox " />
+                    <span asp-validation-for="PacienteCodigoPostal" class="text-danger"></span>
+                    <label> Codigo Postal </label>
+                </div>
+                <div class="col-7 small"></div>
+                <div class="col-2 small"><label>Numero de Telefono</label></div>
+                <div class="col-1 small">
+                    <input asp-for="PacienteCodigoAreaTelefono" class="form-control small textbox " />
+                    <span asp-validation-for="PacienteCodigoAreaTelefono" class="text-danger"></span>
+                    <label> Codigo de Area </label>
+                </div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteNumeroTelefono" class="form-control small textbox " />
+                    <span asp-validation-for="PacienteNumeroTelefono    " class="text-danger"></span>
+                    <label> Numero de telefono </label>
+                </div>
+                <div class="col-6 small"></div>
+                <div class="col-2 small"><label>Numero de Whatsapp</label></div>
+                <div class="col-1 small">
+                    <input asp-for="PacienteCodigoAreaCelular" class="form-control small textbox " />
+                    <span asp-validation-for="PacienteCodigoAreaCelular" class="text-danger"></span>
+                    <label> Codigo de Area </label>
+                </div>
+                <div class="col-3 small">
+                    <input asp-for="PacienteNumeroCelular" class="form-control small textbox " />
+                    <span asp-validation-for="PacienteNumeroCelular" class="text-danger"></span>
+                    <label> Numero de Celular </label>
+                </div>
+                <div class="col-6"></div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-outline-light" />
+                <a asp-action="Index" class="btn btn-outline-light"><i class="fas fa-undo-alt"></i> Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/css/custom.css" />
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

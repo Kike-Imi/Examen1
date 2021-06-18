@@ -4,14 +4,16 @@ using Examen1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Examen1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210617233658_AddPacientes2")]
+    partial class AddPacientes2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,54 +35,47 @@ namespace Examen1.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PacienteApellido")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PacienteCiudad")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PacienteCodigoAreaCelular")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PacienteCodigoAreaCelular")
+                        .HasColumnType("int");
 
-                    b.Property<string>("PacienteCodigoAreaTelefono")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PacienteCodigoAreaTelefono")
+                        .HasColumnType("int");
 
-                    b.Property<string>("PacienteCodigoPostal")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PacienteCodigoPostal")
+                        .HasColumnType("int");
 
                     b.Property<string>("PacienteCorreo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PacienteDireccionCalle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PacienteDireccionCalleLinea2")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PacienteNombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PacienteNumeroCelular")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PacienteNumeroCelular")
+                        .HasColumnType("int");
 
-                    b.Property<string>("PacienteNumeroTelefono")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PacienteNumeroTelefono")
+                        .HasColumnType("int");
 
                     b.Property<string>("PacienteProvincia")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PacienteSegundoNombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PacienteId");
 
-                    b.ToTable("Pacientes");
+                    b.ToTable("pacientes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

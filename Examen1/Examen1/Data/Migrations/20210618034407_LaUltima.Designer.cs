@@ -4,14 +4,16 @@ using Examen1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Examen1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210618034407_LaUltima")]
+    partial class LaUltima
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,9 +44,8 @@ namespace Examen1.Data.Migrations
                     b.Property<string>("PacienteCodigoAreaCelular")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PacienteCodigoAreaTelefono")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PacienteCodigoAreaTelefono")
+                        .HasColumnType("int");
 
                     b.Property<string>("PacienteCodigoPostal")
                         .HasColumnType("nvarchar(max)");
@@ -67,9 +68,8 @@ namespace Examen1.Data.Migrations
                     b.Property<string>("PacienteNumeroCelular")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PacienteNumeroTelefono")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PacienteNumeroTelefono")
+                        .HasColumnType("int");
 
                     b.Property<string>("PacienteProvincia")
                         .HasColumnType("nvarchar(max)");

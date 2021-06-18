@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Examen1.Models.Paciente>
+
+@{
+    ViewData["Title"] = "Citas";
+}
+
+<h2 class="text-light">Citas</h2>
+
+<div class="row search">
+    <div class="col-auto">
+        <input type="text" class="form-control-plaintext small text-light" id="txt-search" placeholder="Buscar..." style="margin-bottom: 10px;"/>
+    </div>
+    <div class="col-auto">
+        <a class="btn btn-outline-light btn-sm text-light" onclick="pacientes_search()" id="search-link" style="margin-bottom: 10px;"><i class="fas fa-search-plus"></i> Buscar</a>
+        <a asp-action="Create" class="btn btn-outline-light btn-sm" style="margin-bottom: 10px;"><i class="far fa-file"></i> Nuevo</a>
+    </div>
+</div>
+<div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PacienteNombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PacienteApellido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PacienteCorreo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PacienteCiudad)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-light">@Html.DisplayFor(modelItem => item.PacienteNombre)</td>
+                        <td class="text-light">@Html.DisplayFor(modelItem => item.PacienteApellido)</td>
+                        <td class="text-light">@Html.DisplayFor(modelItem => item.PacienteCorreo)</td>
+                        <td class="text-light">@Html.DisplayFor(modelItem => item.PacienteCiudad)</td>
+                        <td>
+                            <a asp-action="Edit" class="btn btn-outline-light" asp-route-id="@item.PacienteId"><i class="fas fa-edit"></i> Editar</a>
+                            <a asp-action="Details" class="btn btn-outline-light" asp-route-id="@item.PacienteId"><i class="fas fa-file"></i> Detalles</a>
+                            <a asp-action="Delete" class="btn btn-outline-light" asp-route-id="@item.PacienteId"><i class="fas fa-trash"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/js/pacientes.js" asp-append-version="true"></script>
